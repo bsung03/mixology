@@ -1,26 +1,49 @@
-import React from 'react';
+import React, { Component } from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
+import { Container, Navbar, Nav } from 'react-bootstrap';
+import HomePage from './pages/homepage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+
+    this.state = {
+      title: "Mixolog",
+    }
+
+  }
+
+
+  render(){
+    return(
+
+      <Router>
+        <Container className="myheader" fluid={true}>
+            <Navbar expand="lg">
+              <Navbar.Brand >Mixology</Navbar.Brand>
+              <Navbar.Toggle className="border-0" aria-controls="navbar-toggle"/>
+              <Navbar.Collapse id="navbar-toggle">
+                <Nav className="ml-auto">
+                    <Link className="nav-link">Home</Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
+        </Container>
+
+
+        <HomePage/>
+
+        
+      </Router>
+    );
+  }
+
+
 }
 
 export default App;
