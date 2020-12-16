@@ -1,5 +1,3 @@
-
-
 const { Mongoose } = require("mongoose");
 
 const mongoose = require('mongoose');
@@ -15,16 +13,6 @@ const userSchema = new Schema(
             trim: true,
             minlength: 3
         },
-        ingredients: [{
-            name: {
-                type: String,
-                required: true
-            },
-            amount: {
-                metric: String,
-                count: Number
-            }
-        }],
     },
     {timestamps: true}
 );

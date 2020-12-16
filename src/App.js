@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import logo from './logo.svg';
 import './App.css';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import HomePage from './pages/homepage';
+import axios from 'axios';
 
 
 class App extends React.Component {
@@ -19,13 +19,14 @@ class App extends React.Component {
   }
 
 
+
   render(){
     return(
 
       <Router>
         <Container className="myheader" fluid={true}>
             <Navbar expand="lg">
-              <Navbar.Brand >Mixology</Navbar.Brand>
+              <Navbar.Brand >{this.state.title}</Navbar.Brand>
               <Navbar.Toggle className="border-0" aria-controls="navbar-toggle"/>
               <Navbar.Collapse id="navbar-toggle">
                 <Nav className="ml-auto">
